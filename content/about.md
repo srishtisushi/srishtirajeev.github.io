@@ -10,7 +10,7 @@ ShowShareButtons: false
 disableAnchoredHeadings: true
 ---
 
-My name is Srishti, but I go by Sri. I'm a senior and a Stamps Scholar at the University of Arizona studying bioinformatics and biology, with minors in consciousness studies, ethics, and biochemistry. In short, I love science and technology, but I also love people.
+My name is Srishti, but I also go by Sri. I'm a senior and a Stamps Scholar at the University of Arizona studying bioinformatics and biology, with minors in consciousness studies, ethics, and biochemistry. In short, I love science and technology, but I also love people.
 
 {{< carousel "questions" >}}
 
