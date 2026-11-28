@@ -1,0 +1,485 @@
+/* =========================================
+   HOMEPAGE — MUNNAR
+   ========================================= */
+
+/* if your background file has a different name,
+   only change this one line */
+:root {
+    --munnar-bg-image: url("/images/munnar/continuous.webp");
+
+    --munnar-panel-bg: rgba(252, 247, 245, 0.95);
+    --munnar-panel-border: rgba(120, 85, 100, 0.12);
+    --munnar-footer-border: rgba(120, 85, 100, 0.18);
+    --munnar-shadow: 0 10px 28px rgba(99, 59, 70, 0.08);
+}
+
+.dark {
+    --munnar-panel-bg: rgba(27, 28, 35, 0.88);
+    --munnar-panel-border: rgba(255, 255, 255, 0.08);
+    --munnar-footer-border: rgba(255, 255, 255, 0.08);
+    --munnar-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+/* keep homepage centered and clean */
+.main .profile {
+    min-height: unset;
+    padding: 0;
+}
+
+.munnar-home {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 22px 18px 18px;
+}
+
+.munnar-scene {
+    position: relative;
+    min-height: calc(100vh - 210px);
+    padding: 26px 0 30px;
+    background-image: var(--munnar-bg-image);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+/* remove leftover bars / blur / old artifacts */
+.munnar-scene::before,
+.munnar-scene::after,
+.munnar-home .munnar-center-fade,
+.munnar-home .munnar-middle-strip,
+.munnar-home .munnar-bottom-strip,
+.munnar-home .munnar-left-blur,
+.munnar-home .munnar-right-blur,
+.munnar-home .mist-left,
+.munnar-home .mist-right,
+.munnar-home .flower-overlay-left,
+.munnar-home .flower-overlay-right {
+    display: none !important;
+    content: none !important;
+}
+
+/* center card only */
+.munnar-panel {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 32px 24px;
+    background: var(--munnar-panel-bg);
+    border: 1px solid var(--munnar-panel-border);
+    border-radius: 22px;
+    box-shadow: var(--munnar-shadow);
+    text-align: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.munnar-panel h1 {
+    margin: 0 0 18px;
+    font-family: Georgia, serif;
+    font-size: clamp(54px, 6.5vw, 84px);
+    line-height: 1.02;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.munnar-panel .profile-photo {
+    margin: 0;
+}
+
+.munnar-panel .profile-photo img {
+    display: block;
+    width: min(100%, 625px);
+    margin: 0 auto;
+    height: auto;
+    border-radius: 16px;
+}
+
+.munnar-panel .photo-caption {
+    max-width: 640px;
+    margin: 16px auto 0;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--secondary);
+    text-align: center;
+}
+
+.munnar-panel .social-icons {
+    justify-content: center;
+    gap: 24px;
+    margin-top: 18px;
+}
+
+.munnar-panel .social-icons a svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* bottom-right pin */
+.munnar-note-wrap {
+    position: absolute;
+    right: 22px;
+    bottom: 24px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.munnar-note-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(99, 59, 70, 0.16);
+    border-radius: 999px;
+    background: rgba(252, 247, 245, 0.92);
+    color: #633b46;
+    box-shadow: 0 10px 20px rgba(99, 59, 70, 0.10);
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.dark .munnar-note-toggle {
+    background: rgba(27, 28, 35, 0.92);
+    color: #f0dde6;
+    border-color: rgba(255, 255, 255, 0.10);
+}
+
+.munnar-note-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 24px rgba(99, 59, 70, 0.14);
+}
+
+.munnar-note-card {
+    width: 290px;
+    padding: 14px;
+    border-radius: 18px;
+    background: var(--munnar-panel-bg);
+    border: 1px solid var(--munnar-panel-border);
+    box-shadow: var(--munnar-shadow);
+    text-align: left;
+}
+
+.munnar-note-card h3 {
+    margin: 0 0 8px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--primary);
+}
+
+.munnar-note-card p {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--secondary);
+}
+
+.munnar-note-card img {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 12px;
+}
+
+/* thin footer below card */
+.munnar-footer {
+    max-width: 800px;
+    margin: 18px auto 0;
+    padding: 10px 0 2px;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    color: var(--secondary);
+    border-top: 1px solid var(--munnar-footer-border);
+}
+
+/* header can stay your original pink in light mode */
+.header {
+    background: #fcf5f3;
+}
+
+.dark .header {
+    background: #1f2026;
+}
+
+/* mobile */
+@media (max-width: 800px) {
+    .munnar-home {
+        padding: 14px 10px 16px;
+    }
+
+    .munnar-scene {
+        padding: 18px 0 92px;
+        min-height: auto;
+    }
+
+    .munnar-panel {
+        max-width: 94%;
+        padding: 24px 18px 20px;
+        border-radius: 18px;
+    }
+
+    .munnar-panel h1 {
+        font-size: clamp(42px, 11vw, 64px);
+    }
+
+    .munnar-note-wrap {
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .munnar-note-card {
+        width: min(280px, calc(100vw - 40px));
+    }
+
+    .munnar-footer {
+        max-width: 94%;
+    }
+}
+/* =========================================
+   HOMEPAGE LAYOUT CORRECTIONS
+   ========================================= */
+
+/* Restore full-screen landscape */
+
+body:has(.munnar-home) .main {
+    width: 100%;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.munnar-home {
+    width: 100%;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.munnar-scene {
+    width: 100%;
+    min-height: calc(100svh - 100px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 45px 20px 65px;
+    box-sizing: border-box;
+}
+
+/* Center the rectangle and its contents */
+
+.munnar-panel {
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+    padding: 28px 24px 20px;
+
+    background: var(--theme);
+    border-radius: 12px;
+
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Restore original greeting typography */
+
+.munnar-panel h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 400 !important;
+    font-style: normal;
+    text-align: center;
+    margin: 0 0 22px;
+}
+
+/* Restore the heart */
+
+.munnar-panel h1::after {
+    content: " ♡";
+    font-weight: 400;
+}
+
+/* Center the photograph and caption */
+
+.munnar-panel .profile-photo {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto !important;
+    text-align: center;
+}
+
+.munnar-panel .profile-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto !important;
+    border-radius: 6px;
+}
+
+.munnar-panel .photo-caption {
+    width: 100%;
+    margin: 9px auto 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Center the social icons */
+
+.munnar-panel .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+/* Thin, full-width footer */
+
+.munnar-footer {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 6px 0;
+    background: var(--theme);
+    font-size: 11px;
+    text-align: center;
+}
+
+/* Keep location pin at bottom right */
+
+.munnar-note-wrap {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 600px) {
+    .munnar-scene {
+        padding: 30px 18px 80px;
+    }
+
+    .munnar-panel {
+        max-width: 360px;
+        padding: 24px 18px;
+    }
+}
+
+/* Remove duplicate custom homepage footer */
+.munnar-footer {
+    display: none !important;
+}
+
+/* Keep PaperMod's original footer thin */
+body:has(.munnar-home) .footer {
+    padding: 8px 16px;
+    min-height: 0;
+    line-height: 1.5;
+    background: var(--theme);
+    font-size: 12px;
+    border-top: 1px solid var(--border);
+}
+
+/* =========================================
+   LIGHT AND DARK MODE CORRECTIONS
+   ========================================= */
+
+/* Light mode header */
+
+.header {
+    background: #fcf5f3 !important;
+    color: #633b46;
+}
+
+/* Dark mode header */
+
+:is(.dark, [data-theme="dark"]) .header {
+    background: #201820 !important;
+    color: #eed5e4 !important;
+    border-color: #513b4c;
+}
+
+/* Header navigation and theme toggle */
+
+:is(.dark, [data-theme="dark"]) .logo a,
+:is(.dark, [data-theme="dark"]) #menu a,
+:is(.dark, [data-theme="dark"]) #theme-toggle {
+    color: #eed5e4 !important;
+}
+
+/* Dark mode location pin */
+
+:is(.dark, [data-theme="dark"]) .munnar-note-toggle {
+    background: #201820 !important;
+    color: #eed5e4 !important;
+    border-color: #513b4c;
+}
+
+/* Dark mode Munnar information box */
+
+:is(.dark, [data-theme="dark"]) .munnar-note-card {
+    background: #201820 !important;
+    color: #eed5e4 !important;
+    border-color: #513b4c;
+}
+
+:is(.dark, [data-theme="dark"]) .munnar-note-card h3 {
+    color: #eed5e4 !important;
+}
+
+:is(.dark, [data-theme="dark"]) .munnar-note-card p,
+:is(.dark, [data-theme="dark"]) .munnar-note-card figcaption {
+    color: #cbb5c3 !important;
+}
+
+/* Homepage social icons */
+
+:is(.dark, [data-theme="dark"]) .munnar-panel .social-icons a {
+    color: #eed5e4 !important;
+}
+
+/* Homepage photograph caption */
+
+:is(.dark, [data-theme="dark"]) .munnar-panel .photo-caption {
+    color: #cbb5c3 !important;
+}
+
+/* Remove decorative backgrounds from About only */
+
+.main:has(.about-split),
+.main:has(.about-split) .post-single {
+    background-image: none !important;
+}
+
+.main:has(.about-split)::before,
+.main:has(.about-split)::after,
+.main:has(.about-split) .post-single::before,
+.main:has(.about-split) .post-single::after {
+    display: none !important;
+    content: none !important;
+}

@@ -1,0 +1,9 @@
+<div class="about-split">
+    <div class="about-writing">
+        {{ .Inner | markdownify }}
+    </div>
+
+    <div class="about-visual">
+        {{ partial "portfolio_carousel.html" (.Get 0) }}
+    </div>
+</div>

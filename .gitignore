@@ -1,0 +1,6 @@
+.DS_Store
+.hugo_build.lock
+.munnar-profile-backup.html
+README-INSTALL.txt
+public/
+resources/_gen/

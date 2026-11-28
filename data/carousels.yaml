@@ -1,0 +1,61 @@
+
+questions:
+  - text: >
+      Does continual processing in neurons lead to the feeling of
+      “experience”, as opposed to discrete tokens
+      in language models?
+
+  - text: >
+      Are neural organoids, particularly those given
+      training data, sentient? Are they able to solve
+      problems LLMs can’t? How would inference and
+      verification work on biological compute?
+
+  - text: >
+      Will ephaptic coupling ever be a phenomenon we can leverage? 
+
+  - text: > 
+      How can we use existing sequencing to study more local relationships in proteins, DNA, and RNA? What relationships are missed by standard bioinformatics pipelines?
+
+neuro:
+  - image: "images/about/neuro/bcistuff.jpg"
+    caption: "April 2026: Grant leads for UA's BCI Lab presenting a live demo of our software running on OpenBCI at the Pinnacle Symposium."
+
+  - image: "images/about/neuro/usna.jpg"
+    caption: "November 2023: Poster presented at the U.S. Naval Academy Science and Engineering Conference on Chromosomal Instability in Glioblastoma. PI: Dr. Sara Byron, Ph.D. (TGen)"
+
+  - image: "images/about/neuro/barrow.jpg"
+    caption: "July 2025: Standing next to mentors Dr. Brad Racette, M.D., (right), Dr. Sattler, Ph.D.,(left), and Dr. Jordan Killion, Ph.D. (outermost left) at BNI."
+
+  - image: "images/about/neuro/trivedi.jpg"
+    caption: "July 2026: Trivedi Institute team dinner. My research was on building organoid platforms and their behavior in microgravity. PI: Dr. Sylvain Costes, Ph.D. (University of Pittsburgh)"
+
+  - image: "images/about/neuro/poster.jpg"
+    caption: "November 2025: Research poster presented at ASGSR on hydrocephalus in space; also an oral presentation at NASA's HRP workshop. PI: Dr. Windy McNerney, Ph.D. (Stanford)"
+
+  - image: "images/about/neuro/beverlab.jpg"
+    caption: "April 2024: With the Bever Lab at The Science of Consciousness Conference, where I presented a critique of Integrated Information Theory (IIT) and split-brain patients. PI: Thomas Bever, Ph.D. (University of Arizona)"
+
+systems:
+  - image: "images/about/systems/irc2026.jpg"
+    caption: "January 2026: Refugee Health Forum, where we presented findings from our dashboard."
+
+  - image: "images/about/systems/UN_Vienna.jpg"
+    caption: "February 2026: With the UNOOSA SGH Taskforce at the COPOUS - Scientific and Technical Subcommittee in Vienna, Austria."
+
+  - image: "images/about/systems/TMC_advocacy.jpg"
+    caption: "October 2024: Advocacy for refugee clients to Tucson Medical Center's Executive Board, 2024"
+
+  - image: "images/about/systems/ircstuff.jpg"
+    caption: "April 2026: Poster on findings from interventions informing caseworkers working with refugee children with disabilities. Presented at Research Day, UofA College of Medicine - Tucson. PI: Dr. Julie Armin, Ph.D. (University of Arizona)"
+
+hackathons:
+  - image: "images/sidequests/esa.jpg"
+    caption: "ESA Space & Global Health Hackathon, 2024"
+
+  - image: "images/sidequests/epihack.jpg"
+    caption: "EpiHack Arizona, 2026"
+
+hobbies:
+  - image: "images/about/hobbies/pikacho.jpg"
+    caption: "Views from an early morning hike at Picacho Peak."

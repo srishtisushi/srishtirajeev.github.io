@@ -1,0 +1,103 @@
+<div class="munnar-home">
+  <div class="munnar-scene">
+    <div class="munnar-panel">
+      {{ with site.Params.profileMode }}
+
+      <h1>{{ .title | default "hello! i'm Sri" }}</h1>
+
+      {{ if .imageUrl }}
+      <figure class="profile-photo">
+        <img
+          src="{{ .imageUrl | relURL }}"
+          alt="{{ .imageTitle | default "Profile photo" }}"
+          width="{{ .imageWidth | default 320 }}"
+        />
+
+        <figcaption class="photo-caption">
+          From an interview with Noland Arbaugh, the world's first
+          Neuralink patient and one of the coolest people ever.
+        </figcaption>
+      </figure>
+      {{ end }}
+
+      {{ end }}
+
+      {{ partial "social_icons.html" (dict "align" "center") }}
+    </div>
+
+    <div class="munnar-note-wrap">
+      <button
+        id="munnar-note-toggle"
+        class="munnar-note-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="munnar-note-card"
+        aria-label="About this background"
+      >
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path
+            d="M12 21s-6.5-5.4-6.5-11A6.5 6.5 0 0 1 12 3.5 6.5 6.5 0 0 1 18.5 10c0 5.6-6.5 11-6.5 11Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+          <circle cx="12" cy="10" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8" />
+        </svg>
+      </button>
+
+      <div id="munnar-note-card" class="munnar-note-card" hidden>
+        <h3>munnar, kerala, where i'm from.</h3>
+        <p>
+          This background takes inspiration from the Munnar hills during
+          flowering season (real photo below).
+        </p>
+
+        <img
+          src="{{ "images/munnar/munnar-real.jpg" | relURL }}"
+          alt="Photo of the Munnar hills in Kerala during flowering season"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="munnar-footer">
+    © 2026 · Powered by Hugo &amp; PaperMod
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.getElementById("munnar-note-toggle");
+  const card = document.getElementById("munnar-note-card");
+
+  if (!button || !card) return;
+
+  button.addEventListener("click", function (e) {
+    e.stopPropagation();
+    const isHidden = card.hasAttribute("hidden");
+
+    if (isHidden) {
+      card.removeAttribute("hidden");
+      button.setAttribute("aria-expanded", "true");
+    } else {
+      card.setAttribute("hidden", "");
+      button.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!card.hasAttribute("hidden") && !card.contains(e.target) && !button.contains(e.target)) {
+      card.setAttribute("hidden", "");
+      button.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !card.hasAttribute("hidden")) {
+      card.setAttribute("hidden", "");
+      button.setAttribute("aria-expanded", "false");
+    }
+  });
+});
+</script>

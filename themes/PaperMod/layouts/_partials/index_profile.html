@@ -1,0 +1,32 @@
+
+<div class="profile">
+    <div class="profile_inner">
+        {{ with site.Params.profileMode }}
+
+        <!-- Homepage greeting -->
+        <h1>{{ .title | default site.Title }}</h1>
+
+        <!-- Photograph and caption -->
+        {{ if .imageUrl }}
+        <figure class="profile-photo">
+            <img
+                src="{{ .imageUrl | relURL }}"
+                alt="{{ .imageTitle | default "Profile photo" }}"
+                width="{{ .imageWidth | default 320 }}"
+            />
+
+            <figcaption class="photo-caption">
+                From an interview with Noland Arbaugh,
+                the world's first Neuralink patient and
+                one of the coolest people ever.
+            </figcaption>
+        </figure>
+        {{ end }}
+
+        {{ end }}
+
+        <!-- Social media links -->
+        {{ partial "social_icons.html" (dict "align" "center") }}
+
+    </div>
+</div>

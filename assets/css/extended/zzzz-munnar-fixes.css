@@ -1,0 +1,105 @@
+/* Homepage only: a solid, compact panel above the existing landscape. */
+body:has(.main .profile) .main {
+  background: transparent;
+  max-width: 100%;
+  width: 100%;
+  padding: 24px 16px;
+  min-height: calc(100svh - var(--header-height, 60px) - 28px);
+  display: grid;
+  align-content: center;
+}
+body:has(.main .profile) .main .profile {
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body:has(.main .profile) .profile .profile_inner {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  width: min(100%, 400px);
+  padding: 22px 25px 16px;
+  background: var(--theme);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  gap: 12px;
+  box-shadow: 0 4px 18px rgba(55,31,42,.10);
+}
+body:has(.main .profile) .profile .profile_inner h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(28px, 3.3vw, 40px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+body:has(.main .profile) .profile-photo {max-width: 100%; margin: 0;}
+body:has(.main .profile) .profile img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(45vh, 360px);
+  object-fit: contain;
+  margin: 0 auto;
+}
+body:has(.main .profile) .photo-caption {
+  font: normal 12px/1.45 Georgia, serif;
+  margin: 8px auto 0;
+  text-align: center;
+}
+body:has(.main .profile) .social-icons {padding: 2px 0 0; gap: 10px;}
+body:has(.main .profile) .social-icons a {padding: 7px;}
+/* Keep the scenery outside the panel and footer. */
+body:has(.main .profile)::before, body:has(.main .profile)::after {bottom: 28px;}
+body:has(.main .profile) .footer {
+  position: relative;
+  z-index: 4;
+  background: var(--theme);
+  border-top: 1px solid var(--border);
+  width: 100%;
+  max-width: none;
+  min-height: 28px;
+  padding: 5px 12px;
+  margin: 0;
+  font: normal 11px/18px Georgia, serif;
+  letter-spacing: 0;
+}
+/* The duplicated foreground patches are the source of the bright boxes.
+   In dark mode the original flowers remain in the base scenery, but the
+   extra animated patches are hidden. The mist is dimmed as well. */
+:is(html.dark, html[data-theme="dark"]) body:has(.main .profile) .profile::before,
+:is(html.dark, html[data-theme="dark"]) body:has(.main .profile) .profile::after,
+body:is(.dark,[data-theme="dark"]):has(.main .profile) .profile::before,
+body:is(.dark,[data-theme="dark"]):has(.main .profile) .profile::after {display: none !important;}
+:is(html.dark, html[data-theme="dark"]) body:has(.main .profile)::before,
+:is(html.dark, html[data-theme="dark"]) body:has(.main .profile)::after,
+body:is(.dark,[data-theme="dark"]):has(.main .profile)::before,
+body:is(.dark,[data-theme="dark"]):has(.main .profile)::after {opacity: .65; filter: brightness(.60) saturate(.85);}
+:is(html.dark, html[data-theme="dark"]) body:has(.main .profile) .main::before,
+:is(html.dark, html[data-theme="dark"]) body:has(.main .profile) .main::after,
+body:is(.dark,[data-theme="dark"]):has(.main .profile) .main::before,
+body:is(.dark,[data-theme="dark"]):has(.main .profile) .main::after {background: radial-gradient(ellipse,rgba(177,157,190,.12),transparent 70%);}
+/* Native disclosure: works without JavaScript, with mouse and keyboard. */
+.munnar-note {position: fixed; right: 24px; top: calc(var(--header-height,60px) + 20px); z-index: 3; width: min(265px, calc(100vw - 32px)); pointer-events: none;}
+.munnar-note summary {margin-left: auto; width: 36px; height: 36px; display: grid; place-items: center; list-style: none; background: var(--theme); color: var(--primary); border: 1px solid var(--border); border-radius: 50%; box-shadow: 0 2px 8px #633b4618; pointer-events: auto;}
+.munnar-note summary::-webkit-details-marker {display: none;}
+.munnar-note summary:focus-visible {outline: 2px solid var(--primary); outline-offset: 3px;}
+.munnar-note-copy {pointer-events: auto; background: var(--theme); color: var(--content); border: 1px solid var(--border); border-radius: 7px; box-shadow: 0 4px 18px #633b4620; padding: 14px; margin-top: 8px; font: normal 14px/1.55 Georgia,serif;}
+.munnar-note-copy strong {display: block; color: var(--primary); margin-bottom: 5px;}
+.munnar-note-copy p {margin: 0 0 8px;}
+.munnar-note-copy p:last-child {margin-bottom: 0;}
+/* New filenames avoid stale cached cursor assets. PNG works in Safari too. */
+@media (pointer:fine) {
+  body {cursor: url('../../cursors/rose-arrow-clean.png') 5 3, auto;}
+  a, button, [role=button], summary, .sq-card {cursor: url('../../cursors/rose-pointer-clean.png') 14 3, pointer;}
+  input, textarea, [contenteditable=true] {cursor: text;}
+}
+@media(max-width:700px) {
+  body:has(.main .profile) .main {padding: 48px 12px 24px;}
+  body:has(.main .profile) .profile .profile_inner {width: min(100%, 350px); padding: 18px 16px 12px;}
+  .munnar-note {right: 12px; top: auto; position: absolute; margin-top: -42px;}
+}

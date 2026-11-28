@@ -1,0 +1,444 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+
+/* 01 — Light mode */
+
+:root {
+    --theme: #fcf5f3;
+    --entry: #fffafa;
+    --primary: #633b46;
+    --secondary: #92717a;
+    --tertiary: #f0dce2;
+    --content: #59454c;
+    --border: #e8d5dc;
+    --main-width: 720px;
+    --nav-width: 1100px;
+}
+
+/* 02 — Dark mode */
+
+.dark,
+[data-theme="dark"] {
+    --theme: #201820;
+    --entry: #2e232d;
+    --primary: #eed5e4;
+    --secondary: #b7a0b0;
+    --tertiary: #483344;
+    --content: #dfcbd8;
+    --border: #513b4c;
+}
+
+/* 03 — Background and typography */
+
+body,
+.list {
+    background: var(--theme);
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+em, i {
+    font-style: normal;
+}
+
+/* 04 — Header and navigation */
+
+.header {
+    border-bottom: 1px solid var(--border);
+}
+
+.logo a,
+#menu a {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 17px;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: lowercase;
+}
+
+#menu {
+    gap: 24px;
+}
+
+#menu .active {
+    font-weight: 400;
+    border-bottom: 1px solid var(--primary);
+}
+
+/* 05 — Homepage */
+
+.main .profile {
+    min-height: unset;
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.profile .profile_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile .profile_inner h1 {
+    font-size: clamp(36px, 6vw, 54px);
+    font-weight: 400;
+    font-style: normal;
+    padding: 0;
+    order: -1;
+}
+
+/* 06 — Profile photograph */
+
+.profile img {
+    border-radius: 6px;
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* 07 — Social icons */
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+.social-icons a svg {
+    width: 23px;
+    height: 23px;
+}
+
+.social-icons a {
+    transition: color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: #b5788b;
+    transform: translateY(-3px);
+}
+
+/* 08 — Links */
+
+a {
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #b5788b;
+}
+
+/* 09 — Footer */
+
+.footer {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+/* 10 — Mobile layout */
+
+@media (max-width: 600px) {
+    .logo a,
+    #menu a {
+        font-size: 15px;
+    }
+
+    #menu {
+        gap: 12px;
+    }
+
+    .main .profile {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+}
+/* Homepage photograph and caption */
+
+.profile-photo {
+    margin: 0;
+    width: 320px;
+    max-width: 100%;
+}
+
+.profile-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.photo-caption {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--secondary);
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 7px;
+}
+
+/* ====================================
+   ABOUT PAGE & SIDE-QUESTS
+   ==================================== */
+
+/* Wider page layout */
+
+.main:has(.about-split),
+.main:has(.hackathons-carousel) {
+    max-width: 1100px;
+}
+
+/* Side-by-side text and photographs */
+
+.about-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 40px;
+    margin: 24px 0 36px;
+}
+
+.about-writing {
+    min-width: 0;
+}
+
+.about-writing p:last-child {
+    margin-bottom: 0;
+}
+
+.about-visual {
+    min-width: 0;
+}
+
+/* Section headings */
+
+.main:has(.about-split) .post-content h2,
+.main:has(.hackathons-carousel) .post-content h2 {
+    font-size: 25px;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Hyperlinks */
+
+.main:has(.about-split) .post-content a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-decoration-color: #c79aa9;
+    text-underline-offset: 3px;
+    box-shadow: none;
+}
+
+.main:has(.about-split) .post-content a:hover {
+    color: #b5788b;
+}
+
+/* Carousel container */
+
+.portfolio-carousel {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.carousel-slide[hidden] {
+    display: none !important;
+}
+
+.carousel-slide:not([hidden]) {
+    animation: carousel-fade 0.5s ease;
+}
+
+@keyframes carousel-fade {
+    from { opacity: 0.35; }
+    to { opacity: 1; }
+}
+
+/* Carousel photographs */
+
+.carousel-slide img,
+.carousel-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: contain;
+    border-radius: 5px;
+    margin: 0;
+    background: var(--entry);
+}
+
+.carousel-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: var(--secondary);
+    background: var(--tertiary);
+    font-size: 13px;
+}
+
+/* Photo captions */
+
+.carousel-caption {
+    color: var(--secondary);
+    font-size: 11px;
+    line-height: 1.5;
+    font-style: normal;
+    text-align: center;
+    min-height: 34px;
+    margin-top: 7px;
+}
+
+/* Carousel controls */
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 6px;
+}
+
+.carousel-controls button {
+    color: var(--secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 19px;
+    padding: 6px;
+}
+
+.carousel-controls button:hover {
+    color: var(--primary);
+}
+
+.carousel-dots {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carousel-controls .carousel-dot {
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--border);
+}
+
+.carousel-dot[aria-pressed="true"] {
+    background: var(--secondary);
+}
+
+.carousel-controls .carousel-pause {
+    font-size: 12px;
+}
+
+/* Thin questions carousel */
+
+.questions-carousel {
+    background: var(--tertiary);
+    border-radius: 4px;
+    padding: 12px 20px 6px;
+    margin: 25px 0;
+}
+
+.carousel-heading {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--secondary);
+    margin-bottom: 7px;
+}
+
+.questions-carousel .carousel-viewport {
+    min-height: 60px;
+    display: grid;
+    align-items: center;
+}
+
+.question-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--primary);
+    max-width: 800px;
+    margin: auto;
+}
+
+.questions-carousel .carousel-controls {
+    margin-top: 0;
+}
+
+/* Heart divider */
+
+.heart-divider {
+    text-align: center;
+    color: #b5788b;
+    font-size: 18px;
+    margin: 40px 0;
+}
+
+/* Side-quests / hackathons */
+
+.hackathons-carousel {
+    max-width: 680px;
+    margin: 24px auto;
+}
+
+.hackathons-carousel img,
+.hackathons-carousel .carousel-placeholder {
+    aspect-ratio: 16 / 10;
+}
+
+/* Personal photograph */
+
+.hobbies-carousel .carousel-caption {
+    min-height: 0;
+}
+
+/* Mobile layout */
+
+@media (max-width: 700px) {
+
+    .about-split {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about-visual {
+        width: 100%;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .question-text {
+        font-size: 13px;
+    }
+
+    .questions-carousel {
+        padding: 10px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel-slide {
+        animation: none !important;
+    }
+}

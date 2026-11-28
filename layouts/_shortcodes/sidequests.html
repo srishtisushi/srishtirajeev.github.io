@@ -1,0 +1,17 @@
+<div class="sq-gallery" data-sq>
+  <div class="sq-grid">
+    {{ range site.Data.sidequests }}
+    <button class="sq-card" type="button" data-category="{{ .id }}" aria-expanded="false" aria-controls="sq-{{ .id }}">
+      <img src="{{ .cover | relURL }}" alt="" loading="lazy">
+      <span class="sq-card-label"><span>{{ .title }}</span><small>→</small></span>
+    </button>
+    {{ end }}
+  </div>
+  {{ range site.Data.sidequests }}
+  <section class="sq-panel" id="sq-{{ .id }}" hidden>
+    <h2>currently open: <strong>{{ .title }}</strong></h2>
+    {{ partial "manual_gallery.html" (dict "slides" .photos "name" .id) }}
+  </section>
+  {{ end }}
+</div>
+<script src="{{ "js/carousel.js" | relURL }}" defer></script>

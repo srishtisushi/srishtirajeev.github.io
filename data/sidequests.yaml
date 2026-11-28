@@ -1,0 +1,73 @@
+
+- id: hackathons
+  title: "hackathons + gatherings"
+  cover: "images/sidequests/covers/hackathons.webp"
+  photos:
+    - image: "images/sidequests/hackathons + gatherings/epihack.jpeg"
+      caption: "EpiHack 2026; Spent 5 days with public health professionals from Pima/Maricopa County and engineers to help design a [mobile app](https://github.com/Ending-Pandemics/epihack) to track and prevent the spread of infectious diseases here in Arizona."
+
+    - image: "images/sidequests/hackathons + gatherings/rabbitholeathon.jpg"
+      caption: "[Rabbitholeathon 5.0](https://www.rabbitholeathon.com/); Spent a weekend exploring various questions (rabbitholes) about our future (determinism, AI ethics, sustainable design, and more) with some really cool founders and people!"
+    - image: "images/sidequests/hackathons + gatherings/spaceout.jpg"
+      caption: "Got the chance to work with astronauts, NASA, and the ESA to pitch a novel EEG monitoring system for astronauts. Our team won a special award and funding. Hosted by Geneva Digital Health Hub in 2024."
+
+    - image: "images/sidequests/hackathons + gatherings/uspaa.jpg"
+      caption: "Stamps Scholar representative to Camp USPAA 2026 at UNC - Charlotte. Met with fellow scholars from various institutions to discuss how to improve scholarship programs, community service efforts, and engage with policy at our home institutions (and again, met some really cool folks!)."
+
+
+- id: travel
+  title: "travel"
+  cover: "images/sidequests/covers/travel.webp"
+  photos:
+    - image: "images/sidequests/travel/barcelona.jpg"
+      caption: "Park Guell. Barcelona, Spain. "
+
+    - image: "images/sidequests/travel/panama.jpg"
+      caption: "Views of a river in countryside Panama."
+
+    - image: "images/sidequests/travel/sonoita.jpg"
+      caption: "Sonoita, Arizona. Photo I took during a MexZona clinic back in 2024."
+
+    - image: "images/sidequests/travel/uwlibrary.jpg"
+      caption: "University of Washington Library. Architecture pretty cool."
+
+    - image: "images/sidequests/travel/vienna.JPG"
+      caption: "Outside the UN Office in Vienna, Austria."
+
+
+- id: misc
+  title: "misc"
+  cover: "images/sidequests/covers/misc.webp"
+  photos:
+    - image: "images/sidequests/misc/cessna.jpg"
+      caption: "Views from a small Cessna I flew over Ryan Airfield. My first flight!"
+    - image: "images/sidequests/misc/quote.jpg"
+      caption: "From the Science Museum in Pittsburgh, Pennsylvania."
+
+
+
+
+- id: nature
+  title: "nature"
+  cover: "images/sidequests/covers/nature.webp"
+  photos:
+    - image: "images/sidequests/nature/gatespass.jpg"
+      caption: "Stargazing at Gates Pass, Arizona"
+
+    - image: "images/sidequests/nature/kittpeak.jpg"
+      caption: "Kitt Peak, Arizona"
+
+    - image: "images/sidequests/nature/lajolla.jpg"
+      caption: "La Jolla, California"
+
+    - image: "images/sidequests/nature/mountrainier.jpg"
+      caption: "Mount Rainier, Washington. One of my family's favorite hikes, and undoubtedly one of the most beautiful places in the US."
+
+    - image: "images/sidequests/nature/mtlemon.jpg"
+      caption: "Stargazing atop Mount Lemon, Arizona; yes, that's the milky way!"
+
+    - image: "images/sidequests/nature/oregon.jpg"
+      caption: "Multnomah Falls, Oregon"
+
+    - image: "images/sidequests/nature/silverbell.jpg"
+      caption: "Silverbell lake. I love water (I'm aware the irony of saying that as an Arizona resident), so this one of my favorite spots in Tucson."

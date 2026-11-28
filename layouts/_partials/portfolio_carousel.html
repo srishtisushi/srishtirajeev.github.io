@@ -1,0 +1,4 @@
+{{ $name := . }}
+{{ $slides := index site.Data.carousels $name }}
+{{ with $slides }}{{ partial "manual_gallery.html" (dict "slides" . "name" $name) }}{{ end }}
+<script src="{{ "js/carousel.js" | relURL }}" defer></script>

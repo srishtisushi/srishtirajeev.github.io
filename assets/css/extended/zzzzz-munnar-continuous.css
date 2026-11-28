@@ -1,0 +1,31 @@
+/* Homepage: one continuous painting behind the compact profile card. */
+body:has(.main .profile)::before,
+body:has(.main .profile)::after,
+body:has(.main .profile) .profile::before,
+body:has(.main .profile) .profile::after {
+  content: none !important;
+  display: none !important;
+}
+body:has(.main .profile) .main {
+  position: relative;
+  isolation: isolate;
+  background: url('../../images/munnar/continuous.webp') center bottom / cover no-repeat !important;
+  padding: 32px 16px 42px;
+}
+body:has(.main .profile) .main .profile {
+  background: transparent !important;
+}
+body:has(.main .profile) .profile .profile_inner {
+  background: var(--theme) !important;
+  box-shadow: 0 4px 18px rgba(55,31,42,.12);
+}
+/* Keep the existing footer and location pin. No theme-colored fade on the artwork. */
+body:has(.main .profile) .main::before,
+body:has(.main .profile) .main::after {
+  position: absolute;
+  top: 55%;
+  background: radial-gradient(ellipse, rgba(255,239,239,.16), transparent 70%) !important;
+}
+@media(max-width:700px) {
+  body:has(.main .profile) .main {padding: 54px 12px 36px;}
+}

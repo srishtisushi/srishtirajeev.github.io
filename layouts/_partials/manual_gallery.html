@@ -1,0 +1,21 @@
+{{ $slides := .slides }}
+<div class="portfolio-carousel {{ .name }}-carousel" data-carousel aria-label="{{ .name }} carousel">
+  {{ if eq .name "questions" }}<div class="carousel-heading">questions i think about</div>{{ end }}
+  <div class="manual-carousel-row">
+    {{ if gt (len $slides) 1 }}<button type="button" class="manual-arrow" data-prev aria-label="Previous slide">←</button>{{ end }}
+    <div class="carousel-viewport" aria-live="polite">
+      {{ range $i, $slide := $slides }}
+      <div class="carousel-slide" {{ if ne $i 0 }}hidden{{ end }}>
+        {{ with $slide.image }}
+          {{ if fileExists (printf "static/%s" .) }}<img src="{{ . | relURL }}" alt="{{ $slide.caption }}" loading="lazy">
+          {{ else }}<div class="carousel-placeholder">{{ $slide.caption | default "Your photograph goes here" }}</div>{{ end }}
+        {{ end }}
+        {{ with $slide.text }}<div class="question-text">{{ . }}</div>{{ end }}
+        {{ with $slide.caption }}<div class="carousel-caption">{{ . | markdownify }}</div>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ if gt (len $slides) 1 }}<button type="button" class="manual-arrow" data-next aria-label="Next slide">→</button>{{ end }}
+  </div>
+  {{ if gt (len $slides) 1 }}<div class="manual-dots" aria-hidden="true">{{ range $i, $slide := $slides }}<span data-indicator {{ if eq $i 0 }}class="current"{{ end }}></span>{{ end }}</div>{{ end }}
+</div>

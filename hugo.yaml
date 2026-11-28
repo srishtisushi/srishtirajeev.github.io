@@ -1,0 +1,51 @@
+
+baseURL: "https://srishtirajeev.github.io/"
+languageCode: "en-us"
+title: "srishti rajeev ♡"
+theme: "PaperMod"
+
+params:
+  defaultTheme: light
+  disableThemeToggle: false
+  hideFooter: false
+
+  profileMode:
+    enabled: true
+    title: "hello! i'm Sri"
+    subtitle: ""
+    imageUrl: "images/profile.jpg"
+    imageTitle: "Profile photo"
+    imageWidth: 320
+    imageHeight: 240
+
+  socialIcons:
+    - name: substack
+      url: "https://substack.com/@srishtirajeev"
+
+    - name: github
+      url: "https://github.com/srishtirajeev"
+
+    - name: linkedin
+      url: "https://www.linkedin.com/in/srishti-rajeev/"
+
+    - name: email
+      url: "mailto:srajeev@arizona.edu"
+
+    - name: spotify
+      url: "https://open.spotify.com/user/y4sqej5s8j99pbsb5afh68c7n"
+
+menu:
+  main:
+    - name: about
+      url: /about/
+      weight: 1
+
+    - name: projects
+      url: /projects/
+      weight: 2
+
+    - name: side-quests
+      url: /sidequests/
+      weight: 3
+
+
