@@ -1,6 +1,6 @@
 ---
 date: '2026-11-25T23:13:28-07:00'
-draft: true
+draft: false
 title: 'Current Projects'
 ---
 Some projects I'm working on outside of my main research and academic commitments:
